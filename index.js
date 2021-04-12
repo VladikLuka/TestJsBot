@@ -16,14 +16,7 @@ bot.on('message', msg => {
     console.log("1 " + result)
 
     function makeHttpObject() {
-        try {return new XMLHttpRequest();}
-        catch (error) {}
-        try {return new ActiveXObject("Msxml2.XMLHTTP");}
-        catch (error) {}
-        try {return new ActiveXObject("Microsoft.XMLHTTP");}
-        catch (error) {}
-
-        throw new Error("Could not create HTTP request object.");
+        return new XMLHttpRequest();
     }
     console.log("2 " + result)
 
