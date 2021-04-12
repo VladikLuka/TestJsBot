@@ -24,6 +24,7 @@ bot.on('message', msg => {
     request.onreadystatechange = function() {
         console.log(request.readyState);
         if (request.readyState === 4){
+            console.log(request.responseText)
             result = request.responseText;
         }
     };
