@@ -26,6 +26,7 @@ bot.on('message', msg => {
             let q = getTime(request.responseText);
             console.log(q);
             result = q;
+            bot.sendMessage(msg.chat.id, q )
         }
     };
     // switch(msg.text){
@@ -37,18 +38,12 @@ bot.on('message', msg => {
 
 
 
-    bot.sendMessage(msg.chat.id, result )
+    // bot.sendMessage(msg.chat.id, result )
 })
 
     function getTime(html){
 
-    return html.slice(33384, 33388)
-
-        html.index(33384)
-        + html.index(33385)
-        + html.index(33386)
-        + html.index(33387)
-        + html.index(33388);
+    return html.slice(33384, 33388);
 
     // let future = html.getElementsByClassName("future");
         // let result = "Слудеющий в ";
