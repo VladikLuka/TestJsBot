@@ -42,7 +42,9 @@ bot.on('message', msg => {
 
     function getTime(html){
 
-    return html.index(33384)
+    return html.slice(33384, 33388)
+
+        html.index(33384)
         + html.index(33385)
         + html.index(33386)
         + html.index(33387)
