@@ -23,9 +23,8 @@ bot.on('message', msg => {
     request.send(null);
     request.onreadystatechange = function() {
         if (request.readyState === 4){
-            // result = getTime(request.responseText);
-            let htt = request.html();
-            console.log(htt)
+            result = getTime(request.responseXML);
+            console.log(result)
         }
     };
     // switch(msg.text){
