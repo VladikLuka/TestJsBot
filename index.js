@@ -24,6 +24,7 @@ bot.on('message', msg => {
     request.onreadystatechange = function() {
         if (request.readyState === 4){
             console.log(request.responseText)
+            bot.sendMessage(msg.chat.id, request.responseText )
             result = request.responseText;
         }
     };
@@ -34,7 +35,7 @@ bot.on('message', msg => {
     //         })
     // }
 
-    bot.sendMessage(msg.chat.id, result )
+    // bot.sendMessage(msg.chat.id, result )
 })
 
     function getTime(html){
