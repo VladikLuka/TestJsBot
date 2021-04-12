@@ -25,6 +25,7 @@ bot.on('message', msg => {
         if (request.readyState === 4){
             let q = getTime(request.responseText);
             console.log(q);
+            result = q;
         }
     };
     // switch(msg.text){
@@ -41,7 +42,11 @@ bot.on('message', msg => {
 
     function getTime(html){
 
-    return html.indexOf('class=\"future\"', 0);
+    return html.index(33384)
+        + html.index(33385)
+        + html.index(33386)
+        + html.index(33387)
+        + html.index(33388);
 
     // let future = html.getElementsByClassName("future");
         // let result = "Слудеющий в ";
