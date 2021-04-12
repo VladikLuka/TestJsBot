@@ -5,6 +5,8 @@ const TOKEN = "1794002695:AAFys97IYl8EDDtuFX0bErL-_BEXGz56ndQ";
 
 const bot = new TelegramBot(TOKEN, {polling: true});
 
+bot.on("polling_error", console.log);
+
 bot.on('message', msg => {
 
     let result = "пусто";
