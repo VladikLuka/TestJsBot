@@ -16,6 +16,7 @@ bot.on('message', msg => {
     console.log("1 " + result)
 
     function makeHttpObject() {
+        let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
         return new XMLHttpRequest();
     }
     console.log("2 " + result)
