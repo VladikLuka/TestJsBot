@@ -23,10 +23,8 @@ bot.on('message', msg => {
     request.send(null);
     request.onreadystatechange = function() {
         if (request.readyState === 4){
-            // result = getTime(request.responseXML);
-            let q = request.responseXML;
+            let q = getTime(request.responseText);
             console.log(q);
-            // console.log(q.get)
         }
     };
     // switch(msg.text){
@@ -42,19 +40,22 @@ bot.on('message', msg => {
 })
 
     function getTime(html){
-        let future = html.getElementsByClassName("future");
-        let result = "Слудеющий в ";
-        for(let i = 0; i < future[0].length;i++) {
-            if(future[0][i] >= 48 && future[0][i] <= 57 || future[0][i] === 58){
-                result += future[0][i];
-            }
-        }
 
-        result += "и в "
+    return html.indexOf('class=\"future\"', 0);
 
-        for(let i = 0; i < future[1].length;i++) {
-            if(future[1][i] >= 48 && future[1][i] <= 57 || future[1][i] === 58){
-                result += future[1][i];
-            }
-        }
+    // let future = html.getElementsByClassName("future");
+        // let result = "Слудеющий в ";
+        // for(let i = 0; i < future[0].length;i++) {
+        //     if(future[0][i] >= 48 && future[0][i] <= 57 || future[0][i] === 58){
+        //         result += future[0][i];
+        //     }
+        // }
+        //
+        // result += "и в "
+        //
+        // for(let i = 0; i < future[1].length;i++) {
+        //     if(future[1][i] >= 48 && future[1][i] <= 57 || future[1][i] === 58){
+        //         result += future[1][i];
+        //     }
+        // }
     }
