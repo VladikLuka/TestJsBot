@@ -1,7 +1,6 @@
 const TelegramBot = require('node-telegram-bot-api');
 const kb = require('./keyboard-buttons');
 const keyboard = require('./keyboard');
-// const $ = require( 'jquery' );
 
 const TOKEN = "1794002695:AAFys97IYl8EDDtuFX0bErL-_BEXGz56ndQ";
 
