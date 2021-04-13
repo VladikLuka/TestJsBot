@@ -46,21 +46,23 @@ bot.on('message', msg => {
         const jsdom = require('jsdom');
         let DOM = new jsdom.JSDOM(html);
 
-        let future = DOM.getElementsByClassName("future");
-        let result = "Слудеющий в ";
-        for(let i = 0; i < future[0].length;i++) {
-            if(future[0][i] >= 48 && future[0][i] <= 57 || future[0][i] === 58){
-                result += future[0][i];
-            }
-        }
+        let result = html.substring(33384, 33389);
 
-        result += "и в "
-
-        for(let i = 0; i < future[1].length;i++) {
-            if(future[1][i] >= 48 && future[1][i] <= 57 || future[1][i] === 58){
-                result += future[1][i];
-            }
-        }
+        // let future = DOM.getElementsByClassName("future");
+        // let result = "Слудеющий в ";
+        // for(let i = 0; i < future[0].length;i++) {
+        //     if(future[0][i] >= 48 && future[0][i] <= 57 || future[0][i] === 58){
+        //         result += future[0][i];
+        //     }
+        // }
+        //
+        // result += "и в "
+        //
+        // for(let i = 0; i < future[1].length;i++) {
+        //     if(future[1][i] >= 48 && future[1][i] <= 57 || future[1][i] === 58){
+        //         result += future[1][i];
+        //     }
+        // }
 
         return result;
     }
