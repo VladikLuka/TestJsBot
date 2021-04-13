@@ -41,16 +41,16 @@ bot.on('message', msg => {
     };
 })
 
-// bot.onText(/\/start/, msg => {
-//
-//     bot.sendMessage(msg.chat.id,  'Hello ', {
-//         reply_markup:{
-//             keyboard: keyboard.Roscha
-//         }
-//     }).catch(err => {
-//         console.log(err.responseText)
-//     })
-// })
+bot.onText(/\/start/, msg => {
+
+    bot.sendMessage(msg.chat.id,  'Hello ', {
+        reply_markup:{
+            keyboard: keyboard.Roscha
+        }
+    }).catch(err => {
+        console.log(err.responseText)
+    })
+})
 
     function getTime(html){
 
