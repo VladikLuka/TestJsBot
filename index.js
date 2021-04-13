@@ -54,7 +54,7 @@ bot.on('message', msg => {
 
 bot.onText(/\/start/, msg => {
     bot.sendMessage(msg.chat.id,  'Hello ', {
-        inline_markup:{
+        reply_markup:{
             keyboard: keyboard.Roscha
         }
     }).catch(err => {
