@@ -53,6 +53,8 @@ bot.on('message', msg => {
                 })
             }
         }
+    }else {
+        bot.sendMessage(msg.chat.id, "Неизвестный номер автобуса")
     }
 })
  function getTime(html, msg){
