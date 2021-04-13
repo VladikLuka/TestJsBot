@@ -2,30 +2,29 @@ const TelegramBot = require('node-telegram-bot-api');
 const kb = require('./keyboard-buttons');
 const keyboard = require('./keyboard');
 const url = require('url');
+const express = require('express');
+
+let app = express();
 
 const TOKEN = "1794002695:AAFys97IYl8EDDtuFX0bErL-_BEXGz56ndQ";
 
 const bot = new TelegramBot(TOKEN, {polling: true});
 
 require('https').createServer((req, res) => {
-    console.log("Hello");
 
-    let urlParts = url.parse(req.url);
-    if(req.method === "GET"){
-        console.log("Hello 2");
-        console.log(urlParts.pathname);
-        switch (urlParts.pathname){
-            case "/wakemydyno.txt":
-                res.end("homepage")
-            break
-            case "/":
-                res.end("hi")
-            break
-        }
-    }
-}).listen(process.env.PORT || 5000).on('request', function(req, res){
+}, app).listen(process.env.PORT || 5000).on('request', function(req, res){
     res.end('')
 });
+
+app.get('/', (req, res) => {
+    console.log("ASDASDASD");
+    res.end("HELLO");
+})
+
+app.get('/wakemydyno.txt', (req, res) => {
+    console.log("WAKEUPP");
+    res.end("WAKE UPP");
+})
 
 bot.on("polling_error", console.log);
 
