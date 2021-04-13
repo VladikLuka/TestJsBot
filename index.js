@@ -26,16 +26,15 @@ app.get('/wakemydyno.txt', (req, res) => {
     res.end("WAKE UPP");
 })
 
+function makeHttpObject() {
+    let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+    return new XMLHttpRequest();
+}
+
 bot.on("polling_error", console.log);
 
 bot.on('message', msg => {
-
     let result = '';
-
-    function makeHttpObject() {
-        let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-        return new XMLHttpRequest();
-    }
 
     let request = makeHttpObject();
 
@@ -85,4 +84,12 @@ bot.onText(/\/start/, msg => {
     index = html.indexOf("future", index+50);
     result += html.substring(index+10, index+50).trim();
     return result;
+}
+
+setInterval(pingServer, 10000);
+
+function pingServer (){
+    console.log("PING")
+    let request = makeHttpObject().open('GET','https://jsbot-test.herokuapp.com/', true);
+    request.send(null);
 }
