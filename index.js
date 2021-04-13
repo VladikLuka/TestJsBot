@@ -12,7 +12,7 @@ bot.on("polling_error", console.log);
 bot.onText(/\/start/, msg => {
 
     bot.sendMessage(msg.chat.id,  'Hello ', {
-        reply_markup:{
+        inline_markup:{
             keyboard: keyboard.Roscha
         }
     }).catch(err => {
