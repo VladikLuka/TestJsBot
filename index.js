@@ -12,16 +12,6 @@ require('https').createServer().listen(process.env.PORT || 5000).on('request', f
 
 bot.on("polling_error", console.log);
 
-bot.onText(/\/start/, msg => {
-    bot.sendMessage(msg.chat.id,  'Hello ', {
-        inline_markup:{
-            keyboard: keyboard.Roscha
-        }
-    }).catch(err => {
-        console.log(err.responseText)
-    })
-})
-
 bot.on('message', msg => {
 
     let result = '';
@@ -58,10 +48,21 @@ bot.on('message', msg => {
         bot.sendMessage(msg.chat.id, "Неизвестный номер автобуса")
     }
 })
+
+bot.onText(/\/start/, msg => {
+    bot.sendMessage(msg.chat.id,  'Hello ', {
+        inline_markup:{
+            keyboard: keyboard.Roscha
+        }
+    }).catch(err => {
+        console.log(err.responseText)
+    })
+})
+
  function getTime(html, msg){
     let index = html.indexOf("future");
     let firstResult = html.substring(index+10, index+50).trim();
-    let result ="Следующие "+ msg.text + " автобусы  в " + firstResult + " и в ";
+    let result ="Следующие "+ msg.text + " автобусы в " + firstResult + " и в ";
     index = html.indexOf("future", index+50);
     result += html.substring(index+10, index+50).trim();
     return result;

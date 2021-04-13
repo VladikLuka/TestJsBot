@@ -5,5 +5,8 @@ module.exports = {
         [kb.Roscha["96"]],
         [kb.Roscha["132"]],
         [kb.Roscha["47"]]
-    ]
+    ],
+    FIR:{
+
+    }
 }
