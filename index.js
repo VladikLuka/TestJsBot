@@ -34,7 +34,9 @@ bot.on('message', msg => {
             let q = getTime(request.responseText);
             console.log(q);
             result = q;
-            bot.sendMessage(msg.chat.id, q )
+            bot.sendMessage(msg.chat.id, q ).catch(err => {
+                console.log(err.responseText)
+            })
         }
     };
 })
@@ -45,6 +47,8 @@ bot.onText(/\/start/, msg => {
         reply_markup:{
             keyboard: keyboard.Roscha
         }
+    }).catch(err => {
+        console.log(err.responseText)
     })
 })
 
