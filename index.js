@@ -54,14 +54,11 @@ bot.on('message', msg => {
         }
     }
 })
-
-    function getTime(html){
-
-        let index = html.indexOf("future");
-        let firstResult = html.substring(index+10, index+50).trim();
-        let result ="Следующий в " + firstResult + " и в ";
-        index = html.indexOf("future", index+50);
-        result += html.substring(index+10, index+50).trim();
-
-        return result;
-    }
+ function getTime(html){
+    let index = html.indexOf("future");
+    let firstResult = html.substring(index+10, index+50).trim();
+    let result ="Следующий в " + firstResult + " и в ";
+    index = html.indexOf("future", index+50);
+    result += html.substring(index+10, index+50).trim();
+    return result;
+}
