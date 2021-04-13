@@ -43,10 +43,9 @@ bot.on('message', msg => {
 
     function getTime(html){
 
-        const jsdom = require('jsdom');
-        let DOM = new jsdom.JSDOM(html);
+    let index = html.indexOf("future");
 
-        let result = html.substring(0, 10);
+        let result = html.substring(index, index+10);
 
         // let future = DOM.getElementsByClassName("future");
         // let result = "Слудеющий в ";
