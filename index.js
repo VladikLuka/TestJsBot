@@ -33,6 +33,9 @@ bot.on('message', msg => {
         default: result = 'неизвестый автобус';
     }
     if (!!!result){
+        if(msg.text === "/start"){
+            return;
+        }
         request.send(null);
         request.onreadystatechange = function() {
             if (request.readyState === 4){
