@@ -45,7 +45,7 @@ bot.on('message', msg => {
         request.send(null);
         request.onreadystatechange = function() {
             if (request.readyState === 4){
-                let q = getTime(request.responseText);
+                let q = getTime(request.responseText, msg);
                 console.log(q);
                 result = q;
                 bot.sendMessage(msg.chat.id, q ).catch(err => {
@@ -55,10 +55,10 @@ bot.on('message', msg => {
         }
     }
 })
- function getTime(html){
+ function getTime(html, msg){
     let index = html.indexOf("future");
     let firstResult = html.substring(index+10, index+50).trim();
-    let result ="Следующий в " + firstResult + " и в ";
+    let result ="Следующие "+ msg.text + " автобусы  в " + firstResult + " и в ";
     index = html.indexOf("future", index+50);
     result += html.substring(index+10, index+50).trim();
     return result;
