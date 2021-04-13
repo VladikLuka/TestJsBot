@@ -8,9 +8,11 @@ const TOKEN = "1794002695:AAFys97IYl8EDDtuFX0bErL-_BEXGz56ndQ";
 const bot = new TelegramBot(TOKEN, {polling: true});
 
 require('https').createServer((req, res) => {
+    console.log("Hello");
+
     let urlParts = url.parse(req.url);
     if(req.method === "GET"){
-        console.log("Hello");
+        console.log("Hello 2");
         console.log(urlParts.pathname);
         switch (urlParts.pathname){
             case "/wakemydyno.txt":
