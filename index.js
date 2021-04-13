@@ -45,11 +45,13 @@ bot.on('message', msg => {
 
     let index = html.indexOf("future");
 
-        let result ="Слудеющий в " + html.substring(index+10, index+50) + "и в ";
+        let firstResult = html.substring(index+10, index+50).trim();
+
+        let result ="Слудеющий в " + firstResult + "и в ";
 
         index = html.indexOf("future", index+50);
 
-        result += html.substring(index+10, index+50);
+        result += html.substring(index+10, index+50).trim();
 
         // let future = DOM.getElementsByClassName("future");
         // let result = "Слудеющий в ";
