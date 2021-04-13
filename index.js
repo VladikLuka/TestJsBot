@@ -10,7 +10,6 @@ const bot = new TelegramBot(TOKEN, {polling: true});
 bot.on("polling_error", console.log);
 
 bot.onText(/\/start/, msg => {
-
     bot.sendMessage(msg.chat.id,  'Hello ', {
         inline_markup:{
             keyboard: keyboard.Roscha
