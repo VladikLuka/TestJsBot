@@ -1,6 +1,13 @@
 const TelegramBot = require('node-telegram-bot-api');
 const kb = require('./keyboard-buttons');
 const keyboard = require('./keyboard');
+const express = require('express');
+
+let app = express();
+
+app.get('/wakemydyno.txt', (req, res) =>{
+    res.send('hello world')
+})
 
 const TOKEN = "1794002695:AAFys97IYl8EDDtuFX0bErL-_BEXGz56ndQ";
 
