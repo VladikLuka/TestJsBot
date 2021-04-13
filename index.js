@@ -33,7 +33,7 @@ bot.on('message', msg => {
         default: result = 'неизвестый автобус';
     }
     if (!!!result){
-        if(msg.text === "/start"){
+        if(msg.text.contains("/start")){
             return;
         }
         request.send(null);
