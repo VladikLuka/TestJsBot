@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "https": "^1.0.0",
     "jsdom": "^16.4.0",
     "node-telegram-bot-api": "^0.52.0",
     "xmlhttprequest": "^1.8.0"

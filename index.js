@@ -6,7 +6,9 @@ const TOKEN = "1794002695:AAFys97IYl8EDDtuFX0bErL-_BEXGz56ndQ";
 
 const bot = new TelegramBot(TOKEN, {polling: true});
 
-console.log("TELEGRAM BOT PORT: " + process.env.PORT);
+require('https').createServer().listen(process.env.PORT || 5000).on('request', function(req, res){
+    res.end('')
+});
 
 bot.on("polling_error", console.log);
 
