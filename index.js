@@ -46,7 +46,7 @@ bot.on('message', msg => {
         const jsdom = require('jsdom');
         let DOM = new jsdom.JSDOM(html);
 
-        let result = html.substring(33384, 33389);
+        let result = html.substring(0, 10);
 
         // let future = DOM.getElementsByClassName("future");
         // let result = "Слудеющий в ";
