@@ -38,7 +38,6 @@ bot.on('message', msg => {
         break
         default: result = 'неизвестый автобус';
     }
-
     if (!!!result){
         request.send(null);
         request.onreadystatechange = function() {
