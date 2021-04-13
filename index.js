@@ -33,11 +33,6 @@ bot.on('message', msg => {
         default: result = 'неизвестый автобус';
     }
     if (!!!result){
-        console.log(1)
-        if(msg.text === "/start"){
-            console.log(msg.text)
-            return;
-        }
         request.send(null);
         request.onreadystatechange = function() {
             if (request.readyState === 4){
@@ -50,6 +45,9 @@ bot.on('message', msg => {
             }
         }
     }else {
+        if(msg.text === "/start"){
+            return;
+        }
         bot.sendMessage(msg.chat.id, "Неизвестный номер автобуса")
     }
 })
