@@ -90,6 +90,7 @@ setInterval(pingServer, 10000);
 
 function pingServer (){
     console.log("PING")
-    let request = makeHttpObject().open('GET','https://jsbot-test.herokuapp.com/', true);
+    let request = makeHttpObject();
+    request.open('GET','https://jsbot-test.herokuapp.com/', true);
     request.send(null);
 }
