@@ -39,7 +39,7 @@ bot.on('message', msg => {
     };
 })
 
-bot.onText(/\/start/, msg => {
+bot.on('/start', msg => {
     bot.sendMessage(msg.chat.id,  'Hello ', {
         reply_markup:{
             keyboard: keyboard.Roscha
