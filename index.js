@@ -86,7 +86,7 @@ bot.onText(/\/start/, msg => {
     return result;
 }
 
-setInterval(pingServer, 10000);
+setInterval(pingServer, 1000000);
 
 function pingServer (){
     console.log("PING")
