@@ -1,19 +1,21 @@
 const TelegramBot = require('node-telegram-bot-api');
 const kb = require('./keyboard-buttons');
 const keyboard = require('./keyboard');
-const express = require('express');
-
-let app = express();
-
-app.get('/wakemydyno.txt', (req, res) =>{
-    res.send('hello world')
-})
+const url = require('url');
 
 const TOKEN = "1794002695:AAFys97IYl8EDDtuFX0bErL-_BEXGz56ndQ";
 
 const bot = new TelegramBot(TOKEN, {polling: true});
 
-require('https').createServer().listen(process.env.PORT || 5000).on('request', function(req, res){
+require('https').createServer((req, res) => {
+    let urlParts = url.parse(req.url);
+    if(req.method === "GET"){
+        switch (urlParts.pathname){
+            case "/wakemydyno.txt":
+                res.end("homepage")
+        }
+    }
+}).listen(process.env.PORT || 5000).on('request', function(req, res){
     res.end('')
 });
 
